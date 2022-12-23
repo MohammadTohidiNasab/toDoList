@@ -1,19 +1,7 @@
 from rest_framework import generics
-from .serializers import *
-from .models import *
+from .serializers import ToDoSerializer
+from .models import Todo
 
-class ListTodo(generics.ListAPIView):
-    queryset = Todo.objects.all()
-    serializer_class = ToDoSerializer
-
-class DetailTodo(generics.RetrieveUpdateAPIView):
-    queryset = Todo.objects.all()
-    serializer_class = ToDoSerializer
-
-class CreateTodo(generics.CreateAPIView):
-    queryset = Todo.objects.all()
-    serializer_class = ToDoSerializer
-
-class DeleteTodo(generics.DestroyAPIView):
+class Cred (generics.RetrieveUpdateDestroyAPIView):
     queryset = Todo.objects.all()
     serializer_class = ToDoSerializer
